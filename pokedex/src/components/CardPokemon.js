@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { StyleCardPokemon } from "../style"
+import { StyleCard } from "./style";
+import pokemon from "../img/poke1.png"
 
 function CardPokemon () {
     return(
-        <StyleCardPokemon>
-            <img alt="Imagem do Pokemon"></img>
-            <button>Adicionar a Pokedex</button>
-            <button>Ver Detalhes</button>
-        </StyleCardPokemon>
+        <StyleCard>
+            <img src={pokemon} alt="Imagem do Pokemon"></img>
+            <p>CHARMANDER</p>
+            <button>Add to Pokedex</button>
+            <button>View Details</button>
+        </StyleCard>
     )
 }
 

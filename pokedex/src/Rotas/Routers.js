@@ -6,6 +6,7 @@ import Detalhes from '../pages/Details/details';
 
 const Routers = ({dataPock, isLoadingPock, errorPock, reload, setReload})=> {
     return (
+        <>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<Home />} />
@@ -13,6 +14,7 @@ const Routers = ({dataPock, isLoadingPock, errorPock, reload, setReload})=> {
                     <Route path="/details" element={<Detalhes dataPock={dataPock} isLoadingPock={isLoadingPock} errorPock={errorPock} />} />
                 </Routes>
             </BrowserRouter>
+        </>
        )
     }
 export default Routers;
