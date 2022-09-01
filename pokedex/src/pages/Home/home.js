@@ -4,9 +4,10 @@ import CardPokemon from "../../components/CardPokemon";
 import Headers from "../../components/headers";
 
 function Home () {
+    const title ="Lista de Pokemons"
     return(
         <>
-        <Headers/>
+        <Headers title={title}/>
         {/* <CardPokemon/> */}
         </>
     )
