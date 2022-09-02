@@ -1,9 +1,9 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Byron
+- Luana
+- Samuel
 
 Link do Surge: http://flawless-giants.surge.sh/
 
