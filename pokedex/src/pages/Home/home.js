@@ -6,24 +6,11 @@ import Headers from "../../components/headers";
 import { StyleHome } from "./style";
 
 function Home () {
-
-const navigate = useNavigate();
-
+    const title ="Lista de Pokemons"
     return(
         <>
-        <Headers/>
-        <StyleHome>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-            <CardPokemon/>
-        </StyleHome>
+        <Headers title={title}/>
+        {/* <CardPokemon/> */}
         </>
     )
 }
