@@ -21,7 +21,7 @@ function Details() {
     return(
         <>
         <Headers
-        title={data.name}
+        title={!isLoading&&data&&data.name}
         />
         <ContainerBody>
         <CarImages dataPokemom={data}/>

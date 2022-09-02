@@ -11,10 +11,10 @@ function CardPokemon (props) {
     const [data, isLoading, erro, reload, setReload] =
     useRequestData(`${props.url}`);
        // const listPokemon = context.pokemon&&context.pokemon.map((pok)=>{
-        console.log(data.sprites.front_default);
+        console.log(!isLoading&&data&& data.sprites.front_default);
         return(
         <StyleCard>
-            <img src={data.sprites.front_default} alt="Imagem do Pokemon"></img>
+            <img src={!isLoading&&data&&data.sprites.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
             <button>Add to Pokedex</button>
             <button>View Details</button>
