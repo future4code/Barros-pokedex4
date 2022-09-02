@@ -2,7 +2,7 @@ import React from "react";
 import CarImages from "../../components/CardImagesDetails/CardImages";
 import CardMoves from "../../components/CardMovesDetails/CardMoves";
 import CardStats from "../../components/CardStatsDetails/CardStats";
-import Headers from "../../components/headers";
+import Headers from "../../components/Headers/Headers";
 import { ContainerBody } from "./style";
 
 function Details() {

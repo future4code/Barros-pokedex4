@@ -1,8 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import CardPokemon from "../../components/CardPokemon";
-import Headers from "../../components/headers";
+import CardPokemon from "../../components/CardPokemon/CardPokemon";
+import Headers from "../../components/Headers/Headers";
 import { StyleHome } from "./style";
 
 function Home () {
@@ -10,7 +8,13 @@ function Home () {
     return(
         <>
         <Headers title={title}/>
-        {/* <CardPokemon/> */}
+        <StyleHome>
+            <CardPokemon/>
+            <CardPokemon/>
+            <CardPokemon/>
+            <CardPokemon/>
+            <CardPokemon/>
+        </StyleHome>
         </>
     )
 }
