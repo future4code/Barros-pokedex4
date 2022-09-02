@@ -3,7 +3,7 @@ import Logo from "../img/logo.png"
 import { useNavigate } from "react-router-dom";
 import * as MyRouters from "../Rotas/Coodinator"
 
-function Headers(props) {
+function Headers() {
 
   const navigate = useNavigate()
 
@@ -11,8 +11,8 @@ function Headers(props) {
    
       <StyleHeaders>
         <img src={Logo} alt="logo Pokemon"></img>
-        <h1>{/* Lista de Pokemons */} {props.title}</h1>
-        <button onClick={MyRouters.goToPokedex(navigate)}>Pokedex </button>
+        <h1>Lista de Pokemons</h1>
+        <button onClick={() => MyRouters.goToPokedex(navigate)}>POKEDEX</button>
       </StyleHeaders>
   
   );

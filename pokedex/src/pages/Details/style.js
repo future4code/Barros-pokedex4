@@ -9,5 +9,6 @@ export const ContainerBody = styled.body`
     align-items: center;
     justify-content: center;
     position: relative;
+    
   }
 `
