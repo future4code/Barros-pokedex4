@@ -8,11 +8,11 @@ const useRequestData = (url) => {
     const [erro, setErro] = useState(undefined)
     const [reload, setReload] = useState(undefined)
     useEffect(() => {
-        setIsLoading(true);                 
+      setIsLoading(true);                 
         axios.get(url)
         .then(response =>{
           setIsLoading(false);            
-          setData(response.data.trips)
+          setData(response.data)
         }).catch(error =>{
           setIsLoading(false)             
           setErro(error)                    

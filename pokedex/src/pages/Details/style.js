@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerBody = styled.body`
+export const ContainerBody = styled.div`
     display: flex;
     max-width: 100%;
 

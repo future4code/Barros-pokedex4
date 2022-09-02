@@ -8,8 +8,9 @@ export const ContainerType = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 50px 0;
+  margin: 30px 0;
   min-width: 35vw;
+  padding: 5% 0;
   font-size: 200%;
   text-align: center;
   background-color: #fafafa;
