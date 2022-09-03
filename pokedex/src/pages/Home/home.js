@@ -25,7 +25,7 @@ function Home() {
       <Headers title={title} />
       <StyleHome>
         {isLoading && <h3>Carregando...</h3>}
-        {!isLoading&& data && ListPkemom}
+        {!isLoading && data && ListPkemom}
         {!isLoading && !data && erro}
       </StyleHome>
     </>

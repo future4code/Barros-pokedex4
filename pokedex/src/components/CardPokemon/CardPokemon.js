@@ -11,7 +11,7 @@ function CardPokemon (props) {
     const [data, isLoading, erro, reload, setReload] =
     useRequestData(`${props.url}`);
        // const listPokemon = context.pokemon&&context.pokemon.map((pok)=>{
-        console.log(!isLoading&&data&& data.sprites.front_default);
+        console.log(!isLoading&&data&&data.sprites.front_default);
         return(
         <StyleCard>
             <img src={!isLoading&&data&&data.sprites.front_default} alt="Imagem do Pokemon"></img>
