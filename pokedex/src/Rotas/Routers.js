@@ -8,9 +8,9 @@ const Routers = ({dataPock, isLoadingPock, errorPock, reload, setReload})=> {
     return (
             <BrowserRouter>
                 <Routes>
-                    <Route index element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/pokedex" element={<Pokedex dataPock={dataPock} isLoadingPock={isLoadingPock} errorPock={errorPock} />} />
-                    <Route path="/details" element={<Detalhes dataPock={dataPock} isLoadingPock={isLoadingPock} errorPock={errorPock} />} />
+                    <Route path="/details/:id" element={<Detalhes dataPock={dataPock} isLoadingPock={isLoadingPock} errorPock={errorPock} />} />
                 </Routes>
             </BrowserRouter>
        )
