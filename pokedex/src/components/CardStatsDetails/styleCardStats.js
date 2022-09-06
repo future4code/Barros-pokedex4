@@ -16,6 +16,6 @@ export const InformationStats = styled.div`
   flex-direction: column;
   text-align: left;
   label {
-    margin: 5%;
+    margin: 2%;
   }
 `;
