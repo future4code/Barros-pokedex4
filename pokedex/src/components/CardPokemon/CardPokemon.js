@@ -18,7 +18,7 @@ function CardPokemon (props) {
             <img src={!isLoading&&data&&data.sprites.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
             <button>Add to Pokedex</button>
-            <button onClick={() => { MyRouters.goToDetails(navigate(props.id))}}>Detalhes</button>
+            <button onClick={() => { MyRouters.goToDetails(navigate)}}>Detalhes</button>
         </StyleCard>
         )
     }
