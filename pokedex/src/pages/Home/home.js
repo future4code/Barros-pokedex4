@@ -16,7 +16,7 @@ function Home() {
     data &&
     data.results.map((item) => {
       return (
-        <CardPokemon key={item.id} namePokemom={item.name} url={item.url} />
+        <CardPokemon key={item.id} namePokemom={item.name} url={item.url} idPokemom={item.id}/>
       );
     });
 
