@@ -5,7 +5,8 @@ Nome dos integrantes:
 - Luana
 - Samuel
 
-Link do Surge: http://flawless-giants.surge.sh/
+Link do Surge: ratty-kiss.surge.sh
+
 
 O que funciona:
 - Item 1
