@@ -1,4 +1,4 @@
-import { StyleHeaders } from "../Headers/style"
+import { StyleHeaders } from "../../components/Headers/style";
 import Logo from "../../img/logo.png"
 import { useNavigate } from "react-router-dom";
 import * as MyRouters from "../../Rotas/Coodinator"

@@ -1,39 +1,10 @@
 import styled from "styled-components"
-export const StyleHeaders = styled.div`
-    display: flex;  
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #D30A40;
-    font-size: larger;
-    color: whitesmoke;
-    img{
-        height: 10vh;
-    }
-    button{
-        background-color: #FECA05;
-        border-radius: 50px;
-        width: 10rem;
-        height: 3rem;
-        box-shadow: white 5px 5px 5px;
-        color: #3E5CA8;
-        font-size: larger;
-        font-weight: bolder;
-        
-    }
-    button:hover{
-        background-color: #3E5CA8;
-        color: #FECA05;
-    }
-`
-
-//////////////////////////////////////////////////////////////////////////////////// CARD
-
 export const StyleCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 5vh;
 
     button {
         background-color: #D30A40;
@@ -50,9 +21,8 @@ export const StyleCard = styled.div`
     }
      
     img {
-        margin: 30px 30px;
-        padding: 2vw;
-        background-color: #3566AC;
+        padding: 1vh;
+        background:linear-gradient(white, #8DC7CF ) ;
         box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
         border-radius: 5px;
         transition: all 0.3s ease-out;
@@ -64,9 +34,11 @@ export const StyleCard = styled.div`
     p {
         background:linear-gradient(white, #FECA05 ) ;
         width: 10vw;
-
+        margin: 0 0 2vh 0;
+        font-style: italic;
+        font-size: large;
     }
-        
+    ////////////////////////////////////////////////////////////////////    
        @media(max-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;

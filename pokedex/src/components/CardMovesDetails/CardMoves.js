@@ -1,28 +1,34 @@
 import React from "react";
-import { ContainerMoves, ContainerMovesDetails, ContainerType } from "./styleCardMoves";
+import {
+  ContainerMoves,
+  ContainerMovesDetails,
+  ContainerType,
+} from "./styleCardMoves";
 
-
-
-function CardMoves() {
-
-
-
-    return(
-        <ContainerMovesDetails>
-            <ContainerType>
-            <label>Type 1</label>
-            <label>Type 2</label>
-            </ContainerType>
-            <ContainerMoves>
-            <h2>Moves</h2>
-            <label>HP:46</label>
-            <label>Attack:39</label>
-            <label>Defense:52</label>
-            <label>Special-Attack:43</label>
-            
-            </ContainerMoves>
-        </ContainerMovesDetails>
-    )
-    
+function CardMoves(props) {
+  console.log(props.dataPokemom.moves);
+    const ListMoves =
+    props.dataPokemom &&
+    props.dataPokemom.moves.filter((item, idx) => idx < 5).map(item => {
+      return <label key={item.move.name}>{item.move.name}</label>;
+    });
+  const ListTypes =
+    props.dataPokemom &&
+    props.dataPokemom.types.map((item) => {
+      return (
+        <label key={item.type.name} >
+          {item.slot}-{item.type.name}
+        </label>
+      );
+    });
+  return (
+    <ContainerMovesDetails>
+      <ContainerType>{ListTypes}</ContainerType>
+      <ContainerMoves>
+        <h2>Moves</h2>
+        {ListMoves}
+      </ContainerMoves>
+    </ContainerMovesDetails>
+  );
 }
 export default CardMoves;

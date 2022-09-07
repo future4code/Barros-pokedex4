@@ -5,7 +5,8 @@ export const ContainerStats = styled.section`
   min-width: 30vw;
   font-size: 200%;
   text-align: center;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background:linear-gradient(white, #8DC7CF ) ;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
   transition: all 0.3s ease-out;
@@ -16,6 +17,6 @@ export const InformationStats = styled.div`
   flex-direction: column;
   text-align: left;
   label {
-    margin: 5%;
+    margin: 2%;
   }
 `;

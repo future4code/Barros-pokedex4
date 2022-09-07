@@ -1,24 +1,35 @@
-import React,{ useContext } from "react";
+import React,{ useContext, useState } from "react";
 import { StyleCard } from "../CardPokemon/style"
 import { Context } from "../../context/Context"
+import { BASE_URL } from "../../Constants/Constants";
 import useRequestData from "../../hooks/useRequestData";
-import * as MyRouters from "../../Rotas/Coodinator"
 import { useNavigate } from "react-router-dom";
 
-function CardPokemon (props) {
 
-    const navigate = useNavigate()
+function CardPokemon (props) {
+    const navigate = useNavigate();
+    const detailsPage = (id) => {
+        navigate("/details/" + id);
+      };
+
     const context =useContext(Context)
     const [data, isLoading, erro, reload, setReload] =
     useRequestData(`${props.url}`);
-       // const listPokemon = context.pokemon&&context.pokemon.map((pok)=>{
-        // console.log(!isLoading&&data&&data.sprites.front_default);
+       
+    const [listPokedex, setListPokedex] = useState([])
+
+        function addPokemon (id) {
+            const newPok = [...listPokedex,id]        
+            setListPokedex(newPok)
+            }
+        console.log([listPokedex])
         return(
+
         <StyleCard>
             <img src={!isLoading&&data&&data.sprites.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
-            <button>Add to Pokedex</button>
-            <button onClick={() => { MyRouters.goToDetails(navigate)}}>Detalhes</button>
+            <button onClick={addPokemon}>Add to Pokedex</button>
+            <button onClick={()=>detailsPage(data.id)}>View Details</button>
         </StyleCard>
         )
     }
