@@ -13,7 +13,7 @@ export const ContainerType = styled.div`
   padding: 2% 0;
   font-size: 200%;
   text-align: center;
-  background-color: #fafafa;
+  background:linear-gradient(white 40%, #8DC7CF ) ;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
   border-left: 3px solid #b3404a;
@@ -34,7 +34,7 @@ export const ContainerMoves = styled.div`
   flex-direction: column;
   align-items: center;
   /* min-height: 50vh;  */
-  background-color: #fafafa;
+  background:linear-gradient(white 30%, #8DC7CF ) ;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
   transition: all 0.3s ease-out;

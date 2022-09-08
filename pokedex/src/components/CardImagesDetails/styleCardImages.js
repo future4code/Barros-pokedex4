@@ -9,7 +9,7 @@ img{
     background-color: #fafafa;
     margin: 26px 30px;
     padding: 2vw;
-    background-color: #fafafa;
+    background:linear-gradient(white, #8DC7CF ) ;
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
     border-radius: 5px;
     transition: all 0.3s ease-out;

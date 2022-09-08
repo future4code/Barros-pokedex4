@@ -1,11 +1,23 @@
 import styled from "styled-components"
 
-export const StyleHome = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    max-width: 100%;
-    margin: 5vh 30vh 0vh 30vh ;
-    button:nth-child(1){
+export const StyleHeaders = styled.div`
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D30A40;
+    font-size: larger;
+    color: whitesmoke;
+    img{
+        height: 10vh;
+        padding: 2vh;
+    }
+    img:hover{
+        box-shadow: white 2px 2px 2px 2px;
+        border-radius: 50px;
+        
+    }
+    button{
         background-color: #FECA05;
         border-radius: 50px;
         width: 10rem;
@@ -20,20 +32,9 @@ export const StyleHome = styled.div`
         background-color: #3E5CA8;
         color: #FECA05;
     }
-     
     @media(max-width: 800px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    text-align: center;
-    margin: 0;
     button{
-        max-height: 3vh;
-        max-width: 12vh;
-        font-size: 0.6rem;
+        margin: 1vh;
     }
-    img{
-        height: 15vh;
-        width: 10vh;
     }
-}
 `
