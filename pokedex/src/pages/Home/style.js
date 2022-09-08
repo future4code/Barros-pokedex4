@@ -12,6 +12,7 @@ export const StyleHeaders = styled.div`
         height: 12vh;
     }
     button{
+        margin: 0 0.5vw;
         background-color: #FECA05;
         border-radius: 50px;
         width: 10rem;

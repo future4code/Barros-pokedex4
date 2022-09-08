@@ -4,9 +4,9 @@ export const ImageCardDetails = styled.div`
 display: flex;
 flex-direction: column;
 border-radius: 5px;
-background-color: #fafafa;
 
 img{
+    background-color: #fafafa;
     margin: 26px 30px;
     padding: 2vw;
     background-color: #fafafa;
@@ -14,6 +14,7 @@ img{
     border-radius: 5px;
     transition: all 0.3s ease-out;
     min-width: 14vw;
+    max-width: 10vw;
     min-height: 20vh;
     border-left: 3px solid #b3404a;
 
