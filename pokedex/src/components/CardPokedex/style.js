@@ -4,8 +4,7 @@ export const StyleCard = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+    margin-top: 5vh;
 
     button {
         background-color: #D30A40;
@@ -15,7 +14,6 @@ export const StyleCard = styled.div`
         box-shadow: white 5px 5px 5px;
         color: whitesmoke;
         font-weight: bold;
-        margin-top: 1vh;
     }
     button:hover{
         background-color: #FECA05;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Routers from "./Rotas/Routers";
 import axios from "axios";
 import { Context } from "./context/Context"
+import { StyleContainer } from "./style";
 
 function App() {
 
@@ -37,9 +38,11 @@ useEffect(() => {
 }, []);
 
   return (
+    <StyleContainer>
     <Context.Provider value={{pokemon, setPokemon}}>
       <Routers/>
     </Context.Provider>
+    </StyleContainer>
   );
 }
 

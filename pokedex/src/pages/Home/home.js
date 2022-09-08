@@ -7,6 +7,7 @@ import { StyleHome } from "./style";
 
 function Home() {
   const title = "Lista de Pokemons";
+
   const [data, isLoading, erro, reload, setReload] = useRequestData(
     `${BASE_URL}`
   );
@@ -20,6 +21,7 @@ function Home() {
       );
     });
 
+
   return (
     <>
       <Headers title={title} />
@@ -27,6 +29,7 @@ function Home() {
         {isLoading && <h3>Carregando...</h3>}
         {!isLoading && data && ListPkemom}
         {!isLoading && !data && erro}
+        <buttom>MORE »</buttom>
       </StyleHome>
     </>
   );
