@@ -11,7 +11,7 @@ function Headers(props) {
    
       <StyleHeaders>
         <img src={Logo} alt="logo Pokemon"></img>
-        <h1>Lista de Pokemons</h1>
+        <h1>Pokedex</h1>
         <div>
         <button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>
         </div>

@@ -1,5 +1,8 @@
 import React from "react";
 import CardPokemon from "../../components/CardPokemon/CardPokemon";
+import CarImages from "../../components/CardImagesDetails/CardImages";
+import CardMoves from "../../components/CardMovesDetails/CardMoves";
+import CardStats from "../../components/CardStatsDetails/CardStats";
 import Headers from "../../components/Headers/headerspoke";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../Constants/Constants";
@@ -10,18 +13,13 @@ import { Background } from "./style";
 function Pokedex() {
   const title = "Pokedex";
   const navigate = useNavigate();
-  const [data, isLoading, erro, reload, setReload] = useRequestData(
-    `${BASE_URL}`
-  );
-  console.log(data);
-  const ListPkemom =
-    !isLoading &&
-    data &&
-    data.results.map((item) => {
-      return (
-        <CardPokemon key={item.id} namePokemom={item.name} url={item.url} />
-      );
-    });
+  
+
+  
+  
+
+ 
+  
 
   return (
     <>
@@ -29,9 +27,7 @@ function Pokedex() {
         button={<button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>} 
         />
       <Background>
-        {isLoading && <h3>Carregando...</h3>}
-        {!isLoading && data && ListPkemom}
-        {!isLoading && !data && erro}
+       
       </Background>
     </>
   );
