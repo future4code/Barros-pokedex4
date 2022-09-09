@@ -1,19 +1,21 @@
-import axios from "axios";
 import React, { useState } from "react";
 import CardPokemon from "../../components/CardPokemon/CardPokemon";
 import Headers from "../../components/Headers/Headers";
 import { BASE_URL } from "../../Constants/Constants";
 import useRequestData from "../../hooks/useRequestData";
-import { StyleHome } from "../../pages/Home/style"
+import { StyleButtonHome, StyleHome } from "./style";
+import icone2 from "../../img/icons_proximo.png"
+import icone3 from "../../img/icons_anterior.png"
 
 function Home() {
   const title = "Lista de Pokemons";
-  const [listPokedex, setListPokedex] = useState([])
-  const [data, isLoading, erro, reload, setReload] = useRequestData(
+
+  const [data, isLoading, erro] = useRequestData(
     `${BASE_URL}`
   );
-  // console.log(data);
-  const ListPokemom =
+  console.log(data);
+
+  const ListPkemom =
     !isLoading &&
     data &&
     data.results.map((item) => {
@@ -22,15 +24,49 @@ function Home() {
       );
     });
 
-
-    return (
+    const [newPage, setNewPage] = useState('')
+    const [quantifyList, setQuantifyList] = useState(20)
+        
+    function next () {
+      setQuantifyList(quantifyList+20)
+        return (
+          setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
+          
+         )
+      }
+      //console.log(newPage)  
+    
+    function back () {
+      setQuantifyList(quantifyList-20)
+      return(
+        setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
+        //console.log(quantifyList)
+      )
+     //console.log(newPage)
+     }
+     
+     function begin () {
+      setQuantifyList(0)
+      return(
+        setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
+        //console.log(quantifyList)
+      )
+      //console.log(newPage)
+     }
+   
+  return (
     <>
       <Headers title={title} />
       <StyleHome>
         {isLoading && <h3>Carregando...</h3>}
-        {!isLoading && data && ListPokemom}
+        {!isLoading && data && ListPkemom}
         {!isLoading && !data && erro}
       </StyleHome>
+      <StyleButtonHome>
+        <button onClick={begin}><img src={icone3} alt="Botão início"></img> BEGIN</button>
+        <button onClick={back}><img src={icone3} alt="Botão voltar"></img> BACK</button>
+        <button onClick={next}>NEXT <img src={icone2} alt="Botão avançar"></img></button>
+      </StyleButtonHome>
     </>
   );
 }

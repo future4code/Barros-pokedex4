@@ -10,6 +10,12 @@ export const StyleHeaders = styled.div`
     color: whitesmoke;
     img{
         height: 10vh;
+        padding: 2vh;
+    }
+    img:hover{
+        box-shadow: white 2px 2px 2px 2px;
+        border-radius: 50px;
+        
     }
     button{
         background-color: #FECA05;
@@ -20,7 +26,7 @@ export const StyleHeaders = styled.div`
         color: #3E5CA8;
         font-size: larger;
         font-weight: bolder;
-        
+        margin: 2vw;
     }
     button:hover{
         background-color: #3E5CA8;

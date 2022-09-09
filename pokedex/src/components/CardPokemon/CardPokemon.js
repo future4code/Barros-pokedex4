@@ -1,37 +1,53 @@
-import React,{ useContext, useState } from "react";
+import React, {useContext} from "react";
 import { StyleCard } from "../CardPokemon/style"
-import { Context } from "../../context/Context"
-import { BASE_URL } from "../../Constants/Constants";
 import useRequestData from "../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
+// import GlobalStateContext from "../../context/Context"
+import  GlobalStateContext  from "../../context/GlobalStateContext";
 
-
-function CardPokemon (props) {
+function CardPokemon(props) {
     const navigate = useNavigate();
     const detailsPage = (id) => {
         navigate("/details/" + id);
-      };
+    };
 
-    const context =useContext(Context)
-    const [data, isLoading, erro, reload, setReload] =
-    useRequestData(`${props.url}`);
+    const [data, isLoading] =
+        useRequestData(`${props.url}`);
+   
+    const { pokemomPokedex, setPokemomPokedex } = useContext(GlobalStateContext);
+
+    function addPokedex(id, data) {
+        const newPokemonPokedex = [...pokemomPokedex];
        
-    const [listPokedex, setListPokedex] = useState([])
+        const existePokemon =
+          pokemomPokedex &&
+          pokemomPokedex.some((item) => {
+            return id === item.id;
+          });
+       
+        if (existePokemon) {
+          alert(`O pokemon ${data.name} já esta na Pokedex`);
+        } else {
+          newPokemonPokedex.push({
+            id,
+            nome: data.name,
+            photo: data.sprites.other.dream_world.front_default,
+            stats: data.stats,
+          });
+        }
+        setPokemomPokedex(newPokemonPokedex);
+        localStorage.setItem("pokedex", JSON.stringify(pokemomPokedex));
+        console.log(localStorage.getItem("pokedex"));
+         }
 
-        function addPokemon (id) {
-            const newPok = [...listPokedex,id]        
-            setListPokedex(newPok)
-            }
-        console.log([listPokedex])
-        return(
-
+    return (
         <StyleCard>
-            <img src={!isLoading&&data&&data.sprites.front_default} alt="Imagem do Pokemon"></img>
+            <img src={!isLoading && data && data.sprites.other.home.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
-            <button onClick={addPokemon}>Add to Pokedex</button>
-            <button onClick={()=>detailsPage(data.id)}>View Details</button>
+            <button onClick={() => addPokedex(data.id, data)}>Add to Pokedex</button>
+            <button onClick={() => detailsPage(data.id)}>View Details</button>
         </StyleCard>
-        )
-    }
+    )
+}
 
 export default CardPokemon;
