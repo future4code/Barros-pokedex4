@@ -27,13 +27,18 @@ export const ContainerType = styled.div`
       margin: 3% 0;
     }
   }
+  @media(max-width: 1280px) {
+    label {
+    margin: 3%;
+  }
+  }
 `;
 export const ContainerMoves = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  /* min-height: 50vh;  */
+  min-height: 45vh;
   background:linear-gradient(white 30%, #8DC7CF ) ;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
@@ -41,16 +46,17 @@ export const ContainerMoves = styled.div`
   border-left: 3px solid #b3404a;
   font-size: 200%;
   label {
-    margin: 2%;
+    margin: 1%;
   }
-  @media(max-width: 1280px) {
-    height: 70vh;
+ /*  @media(max-width: 1280px) {
+    height: 65vh; 
     label {
     margin: 3%;
   }
-  }
+  } */
   @media (max-width: 800px) {
     height: auto;
+    width: 75vw;
     text-align: center;
     margin-bottom: 20%;
   }

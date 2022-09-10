@@ -1,32 +1,46 @@
-import React from "react";
-import CardPokemon from "../../components/CardPokemon/CardPokemon";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import CardPokedex from "../../components/CardPokedex/CardPokedex";
 import Headers from "../../components/Headers/Headers";
-import { BASE_URL } from "../../Constants/Constants";
-import useRequestData from "../../hooks/useRequestData";
+import { GlobalStateContext } from "../../context/GlobalStateContext";
 import { Background } from "./style";
+import * as MyRouters from "../../Rotas/Coodinator"
 
 function Pokedex() {
   const title = "Pokedex";
-  const [data, isLoading, erro, reload, setReload] = useRequestData(
-    `${BASE_URL}`
-  );
-  console.log(data);
-  const ListPkemom =
-    !isLoading &&
-    data &&
-    data.results.map((item) => {
+  const navigate = useNavigate()
+
+  const detailsPage = (id) => {
+      navigate("/details/" + id);
+    };
+  const {pokemomPokedex,setPokemomPokedex} = useContext(GlobalStateContext);
+
+  const removePokemon = (data)=>{
+    const newPokemonPokedex = [...pokemomPokedex];
+    const pokemonIndex = pokemomPokedex.findIndex((item)=>item.id === data.id);
+    newPokemonPokedex.splice(pokemonIndex,1);
+    setPokemomPokedex(newPokemonPokedex);
+
+  }
+  
+  console.log(pokemomPokedex);
+  const ListPkemon =
+    pokemomPokedex.map((item) => {
       return (
-        <CardPokemon key={item.id} namePokemom={item.name} url={item.url} />
+        <CardPokedex key={item.id} namePokemom={item.name} url={item.photo} 
+        buttonRemove={<button onClick={()=>{removePokemon(item)}}>Remover</button>} 
+        buttonView={<button onClick={()=>detailsPage(item.id)}>View Details</button>}/>
       );
+
     });
 
   return (
     <>
-      <Headers title={title} />
+      <Headers title={title} 
+      button={<button onClick={()=>MyRouters.goToHome(navigate)}>Home</button>}
+      />
       <Background>
-        {isLoading && <h3>Carregando...</h3>}
-        {!isLoading && data && ListPkemom}
-        {!isLoading && !data && erro}
+        {ListPkemon}
       </Background>
     </>
   );
