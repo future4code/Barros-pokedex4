@@ -4,6 +4,7 @@ import CardPokedex from "../../components/CardPokedex/CardPokedex";
 import Headers from "../../components/Headers/Headers";
 import { GlobalStateContext } from "../../context/GlobalStateContext";
 import { Background } from "./style";
+import * as MyRouters from "../../Rotas/Coodinator"
 
 function Pokedex() {
   const title = "Pokedex";
@@ -35,7 +36,9 @@ function Pokedex() {
 
   return (
     <>
-      <Headers title={title} />
+      <Headers title={title} 
+      button={<button onClick={()=>MyRouters.goToHome(navigate)}>Home</button>}
+      />
       <Background>
         {ListPkemon}
       </Background>

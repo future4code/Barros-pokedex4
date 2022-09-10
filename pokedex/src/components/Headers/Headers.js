@@ -13,7 +13,8 @@ function Headers(props) {
         <img onClick={()=>MyRouters.goToHome(navigate)} src={Logo} alt="logo Pokemon"></img>
         <h1>{props.title}</h1>
         <div>
-        <button onClick={()=>MyRouters.goToPokedex(navigate)}>Pokedex </button>
+        {/* <button onClick={()=>MyRouters.goToPokedex(navigate)}>Pokedex </button> */}
+        {props.buttonAdd}
         {props.button}
         </div>
       </StyleHeaders>

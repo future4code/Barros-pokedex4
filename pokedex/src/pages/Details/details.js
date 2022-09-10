@@ -19,13 +19,13 @@ function Details() {
   const [data, isLoading, erro] = useRequestData(`${BASE_URL}` + idPokemom);
   function addPokedex(id, data) {
     const newPokemonPokedex = [...pokemomPokedex];
-   
+
     const existePokemon =
       pokemomPokedex &&
       pokemomPokedex.some((item) => {
         return id === item.id;
       });
-   
+
     if (existePokemon) {
       alert(`O pokemon ${data.name} já esta na Pokedex`);
     } else {
@@ -39,7 +39,7 @@ function Details() {
     setPokemomPokedex(newPokemonPokedex);
     localStorage.setItem("pokedex", JSON.stringify(pokemomPokedex));
     console.log(localStorage.getItem("pokedex"));
-    MyRouters.goToPokedex(navigate)
+    MyRouters.goToPokedex(navigate);
   }
 
   console.log(pokemomPokedex);
@@ -48,10 +48,14 @@ function Details() {
     <>
       <Headers
         title={!isLoading && data && data.name}
-        button={
-          <button onClick={() => addPokedex(idPokemom, data)}>Voltar</button>
+        buttonAdd={
+          <button onClick={() => addPokedex(idPokemom, data)}>
+            Add/Pokedex
+          </button>
         }
-        /*  button={<button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>}  */
+        button={
+          <button onClick={() => MyRouters.goToHome(navigate)}>Voltar</button>
+        }
       />
       <ContainerBody>
         {!isLoading && data && <CarImages dataPokemom={data} />}

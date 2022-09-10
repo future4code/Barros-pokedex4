@@ -4,8 +4,11 @@ import Headers from "../../components/Headers/Headers";
 import { BASE_URL } from "../../Constants/Constants";
 import useRequestData from "../../hooks/useRequestData";
 import { StyleHome } from "./style";
+import * as MyRouters from "../../Rotas/Coodinator"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   const title = "Lista de Pokemons";
 
   const [data, isLoading, erro, reload, setReload] = useRequestData(
@@ -24,7 +27,7 @@ function Home() {
 
   return (
     <>
-      <Headers title={title} />
+      <Headers title={title} button={<button onClick={()=>MyRouters.goToPokedex(navigate)}>Pokedex </button>} />
       <StyleHome>
         {isLoading && <h3>Carregando...</h3>}
         {!isLoading && data && ListPkemom}
