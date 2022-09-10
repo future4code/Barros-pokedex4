@@ -6,7 +6,6 @@ import {
 } from "./styleCardMoves";
 
 function CardMoves(props) {
-  console.log(props.dataPokemom.moves);
     const ListMoves =
     props.dataPokemom &&
     props.dataPokemom.moves.filter((item, idx) => idx < 5).map(item => {

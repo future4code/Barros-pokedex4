@@ -11,7 +11,7 @@ function Home() {
   const [data, isLoading, erro, reload, setReload] = useRequestData(
     `${BASE_URL}`
   );
-  console.log(data);
+  
   const ListPkemom =
     !isLoading &&
     data &&

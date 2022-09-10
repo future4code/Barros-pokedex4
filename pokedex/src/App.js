@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Routers from "./Rotas/Routers";
-import axios from "axios";
-import { Context } from "./context/Context"
 import { StyleContainer } from "./style";
+import GlobalState from "./context/GlobalState";
 
 function App() {
 
-const [pokemon, setPokemon] = useState([])
+/* const [pokemon, setPokemon] = useState([])
 const [photoPokemon, setPhotoPokemon] = useState([])
 
 function getPokemon (){
@@ -36,12 +35,12 @@ function getPhotoPokemon (){
 useEffect(() => {
   getPokemon();
 }, []);
-
+ */
   return (
     <StyleContainer>
-    <Context.Provider value={{pokemon, setPokemon}}>
+    <GlobalState>
       <Routers/>
-    </Context.Provider>
+    </GlobalState>
     </StyleContainer>
   );
 }

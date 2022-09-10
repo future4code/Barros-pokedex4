@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { StyleCard } from "../CardPokemon/style"
-import { Context } from "../../context/Context"
 import useRequestData from "../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
+import { GlobalStateContext } from "../../context/GlobalStateContext";
 
 
 function CardPokemon(props) {
@@ -10,21 +10,20 @@ function CardPokemon(props) {
     const detailsPage = (id) => {
         navigate("/details/" + id);
     };
-
-    const context = useContext(Context)
+        
     const [data, isLoading, erro, reload, setReload] =
         useRequestData(`${props.url}`);
 
     const [listPokedex, setListPokedex] = useState([])
-
-    function addPokemon(id, name, photo) {
+   
+   function addPokemon(id, name, photo) {
         const checkPokedex = listPokedex.filter((pok) => {
             if (pok.name === name) {
                 return "Você já capturou este Pokemon!"
             } else {
                 return false
             }
-        })
+        }) 
 
         let newPok = [...listPokedex]
 
@@ -45,14 +44,14 @@ function CardPokemon(props) {
         localStorage.setItem("pokedex", JSON.stringify())
         alert("Enviado para Pokedex")
         }
-        console.log([listPokedex])
+       console.log([listPokedex]) 
     
     
     return (
         <StyleCard>
             <img src={!isLoading && data && data.sprites.other.home.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
-            <button onClick={addPokemon}>Add to Pokedex</button>
+            <button onClick={()=>addPokemon(data.name)}>Add to Pokedex</button>
             <button onClick={() => detailsPage(data.id)}>View Details</button>
         </StyleCard>
     )
