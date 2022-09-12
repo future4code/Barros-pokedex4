@@ -11,5 +11,4 @@ export const ContainerBody = styled.div`
     justify-content: center;
     position: relative;
   }
-  
 `;

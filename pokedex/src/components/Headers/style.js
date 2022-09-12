@@ -1,3 +1,4 @@
+
 import styled from "styled-components"
 
 export const StyleHeaders = styled.div`
@@ -38,3 +39,4 @@ export const StyleHeaders = styled.div`
     }
     }
 `
+

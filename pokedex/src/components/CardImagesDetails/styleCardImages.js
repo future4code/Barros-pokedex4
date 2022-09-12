@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ImageCardDetails = styled.div`
+
 display: flex;
 flex-direction: column;
 border-radius: 5px;
@@ -16,7 +17,10 @@ img{
     min-width: 10rem;
     max-width: 10rem;
     min-height: 18vh;
+
     border-left: 3px solid #b3404a;
+  }
+
 
 }
 @media(max-width: 1280px) {
@@ -25,3 +29,11 @@ img{
     }
 } 
 `
+
+  @media (max-width: 800px) {
+    img {
+      min-width: 70vw;
+    }
+  }
+`;
+r

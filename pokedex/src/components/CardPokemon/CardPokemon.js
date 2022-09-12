@@ -1,3 +1,4 @@
+
 import React, {useContext} from "react";
 import { StyleCard } from "../CardPokemon/style"
 import useRequestData from "../../hooks/useRequestData";
@@ -40,11 +41,14 @@ function CardPokemon(props) {
         console.log(localStorage.getItem("pokedex"));
          }
 
+
     return (
         <StyleCard>
             <img src={!isLoading && data && data.sprites.other.home.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
+
             <button onClick={() => addPokedex(data.id, data)}>Add to Pokedex</button>
+
             <button onClick={() => detailsPage(data.id)}>View Details</button>
         </StyleCard>
     )

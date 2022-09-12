@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerStats = styled.section`
   margin: 2vw 0;
   min-width: 30vw;
+  height: auto;
   font-size: 200%;
   text-align: center;
   background:linear-gradient(white 20%, #8DC7CF ) ;
@@ -10,6 +11,7 @@ export const ContainerStats = styled.section`
   border-radius: 5px;
   transition: all 0.3s ease-out;
   border-left: 3px solid #b3404a;
+
   @media(max-width: 1280px) {
     label {
     margin: 1%;
@@ -23,6 +25,7 @@ export const ContainerStats = styled.section`
     height: 50vh;
   }
 }
+
 `;
 export const InformationStats = styled.div`
   display: flex;
@@ -31,6 +34,7 @@ export const InformationStats = styled.div`
   align-items: center;
   text-align: left;
   label {
+
     margin: 2%;
   }
 
@@ -55,6 +59,7 @@ export const InformationStats = styled.div`
   }
   h2{ 
     font-size: 5vh;
+
   }
 }
 `;

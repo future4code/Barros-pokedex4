@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Background = styled.body` 
+
       display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: 100%;
@@ -45,3 +46,4 @@ export const StyleButtonHome = styled.div`
         color: #FECA05;
     }
 `
+

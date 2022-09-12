@@ -17,7 +17,7 @@ export const ContainerType = styled.div`
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
   border-left: 3px solid #b3404a;
- 
+
   @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
@@ -28,6 +28,11 @@ export const ContainerType = styled.div`
       margin: 3% 0;
     }
   }
+  @media(max-width: 1280px) {
+    label {
+    margin: 3%;
+  }
+  }
 `;
 
 export const ContainerMoves = styled.div`
@@ -35,12 +40,13 @@ export const ContainerMoves = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  /* min-height: 50vh;  */
+
   background:linear-gradient(white 30%, #8DC7CF ) ;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   border-radius: 5px;
   transition: all 0.3s ease-out;
   border-left: 3px solid #b3404a;
+
   font-size: 160%;
   margin-top: 8vh;
   label {

@@ -1,13 +1,17 @@
-import { useContext } from "react";
+
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import GlobalStateContext from "../../context/GlobalStateContext";
 import CardPokedex from "../../components/CardPokedex/CardPokedex";
+import Headers from "../../components/Headers/Headers";
+import { GlobalStateContext } from "../../context/GlobalStateContext";
 import { Background } from "./style";
-import Headers from "../../components/Headers/Headers"
+import * as MyRouters from "../../Rotas/Coodinator"
+
 
 function Pokedex() {
   const title = "Pokedex";
   const navigate = useNavigate()
+
   const detailsPage = (id) => {
     navigate("/details/" + id);
   };
@@ -26,11 +30,16 @@ function Pokedex() {
           buttonRemove={<button onClick={() => { removePokemon(item) }}>Remover</button>}
           buttonView={<button onClick={() => detailsPage(item.id)}>View Details</button>} />
       );
+
     });
 
   return (
     <>
-      <Headers title={title} />
+
+      <Headers title={title} 
+      button={<button onClick={()=>MyRouters.goToHome(navigate)}>Home</button>}
+      />
+
       <Background>
         {ListPkemon}
       </Background>
