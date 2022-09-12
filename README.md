@@ -42,7 +42,8 @@ https://pokeapi.co/
 📁
 ## Acesso ao projeto
 
-**https://good-north.surge.sh/**
+*slimy-roll.surge.sh
+**
 
 
 
