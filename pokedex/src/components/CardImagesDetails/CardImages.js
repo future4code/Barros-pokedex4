@@ -2,7 +2,6 @@ import React from "react";
 import { ImageCardDetails } from "./styleCardImages";
 
 function CarImages(props) {
-  console.log(props.dataPokemom.sprites);
   return (
     <div>
       <ImageCardDetails>

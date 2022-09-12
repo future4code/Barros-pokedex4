@@ -10,34 +10,26 @@ import * as MyRouters from "../../Rotas/Coodinator"
 import { ContainerBody } from "./style";
 
 function Details() {
-    
+
+    const title = "Nome do Pokemom"
     const navigate = useNavigate();
     const pathParams = useParams();
     const idPokemom = pathParams.id;
-    const [data, isLoading] =
-    useRequestData(`${BASE_URL}`+idPokemom);
-      
-    return(
+    const [data, isLoading, erro] =
+        useRequestData(`${BASE_URL}` + idPokemom);
+
+    return (
         <>
-        <Headers
-        title={!isLoading&&data&&data.name}
-        buttonAdd={
-        <button oncClik={() => addPokedex(idPokemon, data)}> 
-        Add/Pokedex
-        </button>
-        }
-        button={
-            <button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>} 
-        />
-        <ContainerBody>
-        {!isLoading&&data &&<CarImages dataPokemom={data}/>}
-        {!isLoading&&data &&<CardStats dataPokemom={data}/>}
-        {!isLoading&&data &&<CardMoves dataPokemom={data}/>}
-        </ContainerBody>
+            <Headers
+                title={!isLoading && data && data.name}
+                button={<button onClick={() => MyRouters.goToHome(navigate)}>Voltar</button>}
+            />
+            <ContainerBody>
+                {!isLoading && data && <CarImages dataPokemom={data} />}
+                {!isLoading && data && <CardStats dataPokemom={data} />}
+                {!isLoading && data && <CardMoves dataPokemom={data} />}
+            </ContainerBody>
         </>
-
     )
-
 }
-
 export default Details;

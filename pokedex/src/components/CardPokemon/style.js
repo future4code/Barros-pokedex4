@@ -40,7 +40,7 @@ export const StyleCard = styled.div`
         font-style: italic;
         font-size: large;
     }
-    ////////////////////////////////////////////////////////////////////    
+
        @media(max-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
