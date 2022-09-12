@@ -1,57 +1,54 @@
-import React, { useContext, useState } from "react";
+
+import React, {useContext} from "react";
 import { StyleCard } from "../CardPokemon/style"
 import useRequestData from "../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
-import { GlobalStateContext } from "../../context/GlobalStateContext";
-
+// import GlobalStateContext from "../../context/Context"
+import  GlobalStateContext  from "../../context/GlobalStateContext";
 
 function CardPokemon(props) {
     const navigate = useNavigate();
     const detailsPage = (id) => {
         navigate("/details/" + id);
     };
-        
-    const [data, isLoading, erro, reload, setReload] =
+
+    const [data, isLoading] =
         useRequestData(`${props.url}`);
-
-    const [listPokedex, setListPokedex] = useState([])
    
-   function addPokemon(id, name, photo) {
-        const checkPokedex = listPokedex.filter((pok) => {
-            if (pok.name === name) {
-                return "Você já capturou este Pokemon!"
-            } else {
-                return false
-            }
-        }) 
+    const { pokemomPokedex, setPokemomPokedex } = useContext(GlobalStateContext);
 
-        let newPok = [...listPokedex]
+    function addPokedex(id, data) {
+        const newPokemonPokedex = [...pokemomPokedex];
+       
+        const existePokemon =
+          pokemomPokedex &&
+          pokemomPokedex.some((item) => {
+            return id === item.id;
+          });
+       
+        if (existePokemon) {
+          alert(`O pokemon ${data.name} já esta na Pokedex`);
+        } else {
+          newPokemonPokedex.push({
+            id,
+            nome: data.name,
+            photo: data.sprites.other.dream_world.front_default,
+            stats: data.stats,
+          });
+        }
+        setPokemomPokedex(newPokemonPokedex);
+        localStorage.setItem("pokedex", JSON.stringify(pokemomPokedex));
+        console.log(localStorage.getItem("pokedex"));
+         }
 
-        if (checkPokedex.lenght === 0){
-            newPok = [...newPok, {id, name, photo}]
-            localStorage.setItem("pokedex", JSON.stringify(newPok))
-            setListPokedex(newPok)
-        }else {
-            const otherPoke = listPokedex.map((pok)=>{
-                if (pok.name === name){
-                    return {...pok, name, photo}
-                }else {
-                   return pok
-                }
-            })
-        }
-        setListPokedex(newPok)
-        localStorage.setItem("pokedex", JSON.stringify())
-        alert("Enviado para Pokedex")
-        }
-       console.log([listPokedex]) 
-    
-    
+
     return (
         <StyleCard>
             <img src={!isLoading && data && data.sprites.other.home.front_default} alt="Imagem do Pokemon"></img>
             <p>{props.namePokemom}</p>
-            <button onClick={()=>addPokemon(data.name)}>Add to Pokedex</button>
+
+            <button onClick={() => addPokedex(data.id, data)}>Add to Pokedex</button>
+
             <button onClick={() => detailsPage(data.id)}>View Details</button>
         </StyleCard>
     )

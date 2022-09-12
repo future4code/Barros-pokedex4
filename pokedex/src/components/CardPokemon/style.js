@@ -18,9 +18,8 @@ export const StyleCard = styled.div`
         margin-top: 1vh;
     }
     button:hover{
-        background-color: #FECA05;
-        color: #D30A40;
-    }
+        background-color: #3E5CA8;
+            }
      
     img {
         padding: 1vh;
@@ -41,7 +40,7 @@ export const StyleCard = styled.div`
         font-style: italic;
         font-size: large;
     }
-    ////////////////////////////////////////////////////////////////////    
+
        @media(max-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;

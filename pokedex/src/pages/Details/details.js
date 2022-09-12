@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CarImages from "../../components/CardImagesDetails/CardImages";
@@ -67,3 +68,4 @@ function Details() {
 }
 
 export default Details;
+

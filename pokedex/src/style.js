@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import background from "../src/img/background.jpg";
 
-export const StyleContainer = styled.body`  ///////////BACKGROUND "FLUTUANTE"
+
+export const StyleContainer = styled.body`  
+
     margin: 0;
     justify-content: center;
     background-image:url(${background}) ;

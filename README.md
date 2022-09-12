@@ -1,5 +1,6 @@
 # POKEDEX
-![image](https://user-images.githubusercontent.com/102331990/189526579-9e909cd2-4421-450f-b9a0-f0cbdf042793.png)
+
+![Pokedex](./pokedex/src/img/Tela_Readme.png)
 
 ## Índice
 
@@ -42,8 +43,9 @@ https://pokeapi.co/
 📁
 ## Acesso ao projeto
 
-*slimy-roll.surge.sh
-**
+
+**https://good-north.surge.sh/**
+
 
 
 
@@ -62,5 +64,6 @@ https://pokeapi.co/
 
 ✔️
 ## Conclusão
+
 
 Projeto desenvolvido em grupo, com grande aprendizado para todos,  em integrações com API e compartilhamento de dados através do uso de Estados Globais.
