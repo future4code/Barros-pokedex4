@@ -10,10 +10,13 @@ import icone3 from "../../img/icons_anterior.png"
 function Home() {
   const title = "Lista de Pokemons";
 
-  const [data, isLoading, erro] = useRequestData(
-    `${BASE_URL}`
-  );
-  console.log(data);
+  const [newPage, setNewPage] = useState(BASE_URL)
+
+  const [data, isLoading, erro] = useRequestData(newPage);
+  console.log(newPage);
+
+  
+
 
   const ListPkemom =
     !isLoading &&
@@ -23,16 +26,14 @@ function Home() {
         <CardPokemon key={item.id} namePokemom={item.name} url={item.url} idPokemom={item.id}/>
       );
     });
-
-    const [newPage, setNewPage] = useState('')
+    
     const [quantifyList, setQuantifyList] = useState(20)
         
     function next () {
       setQuantifyList(quantifyList+20)
         return (
           setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
-          
-         )
+        )
       }
       //console.log(newPage)  
     
@@ -40,8 +41,7 @@ function Home() {
       setQuantifyList(quantifyList-20)
       return(
         setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
-        //console.log(quantifyList)
-      )
+     )
      //console.log(newPage)
      }
      
@@ -49,10 +49,10 @@ function Home() {
       setQuantifyList(0)
       return(
         setNewPage(`${BASE_URL}?offset=${quantifyList}&limit=20`)
-        //console.log(quantifyList)
       )
       //console.log(newPage)
      }
+
    
   return (
     <>

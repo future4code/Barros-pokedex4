@@ -1,13 +1,19 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import GlobalStateContext from "../../context/GlobalStateContext";
 import CardPokedex from "../../components/CardPokedex/CardPokedex";
-import { Background } from "./style";
+import { StylePokedex } from "./style";
 import Headers from "../../components/Headers/Headers"
+import { BASE_URL } from "../../Constants/Constants";
+import useRequestData from "../../hooks/useRequestData";
+import * as MyRouters from "../../Rotas/Coodinator"
 
 function Pokedex() {
   const title = "Pokedex";
+  const pathParams = useParams();
+  const idPokemom = pathParams.id;
   const navigate = useNavigate()
+  const [data, isLoading] = useRequestData(`${BASE_URL}`+idPokemom);
 
   const detailsPage = (id) => {
       navigate("/details/" + id);
@@ -25,19 +31,23 @@ function Pokedex() {
   const ListPkemon =
     pokemomPokedex.map((item) => {
       return (
-        <CardPokedex key={item.id} namePokemom={item.name} url={item.photo} 
+        <CardPokedex key={item.id} namePokemom={item.nome} url={item.photo} 
         buttonRemove={<button onClick={()=>{removePokemon(item)}}>Remover</button>} 
         buttonView={<button onClick={()=>detailsPage(item.id)}>View Details</button>}/>
       );
 
     });
 
+    
   return (
     <>
-      <Headers title={title} />
-      <Background>
+        <Headers
+        title={title}
+        button={<button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>} 
+        />
+      <StylePokedex>
         {ListPkemon}
-      </Background>
+      </StylePokedex>
     </>
   );
 }

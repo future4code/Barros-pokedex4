@@ -11,18 +11,23 @@ import { ContainerBody } from "./style";
 
 function Details() {
     
-    const title = "Nome do Pokemom"
     const navigate = useNavigate();
     const pathParams = useParams();
     const idPokemom = pathParams.id;
-    const [data, isLoading, erro] =
+    const [data, isLoading] =
     useRequestData(`${BASE_URL}`+idPokemom);
       
     return(
         <>
         <Headers
         title={!isLoading&&data&&data.name}
-        button={<button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>} 
+        buttonAdd={
+        <button oncClik={() => addPokedex(idPokemon, data)}> 
+        Add/Pokedex
+        </button>
+        }
+        button={
+            <button onClick={()=>MyRouters.goToHome(navigate)}>Voltar</button>} 
         />
         <ContainerBody>
         {!isLoading&&data &&<CarImages dataPokemom={data}/>}

@@ -1,14 +1,15 @@
 import styled from "styled-components"
 
-export const Background = styled.body` 
-      display: grid;
+export const StylePokedex = styled.div`
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    max-width: 100%;
+    height: 100vh;
     margin: 5vh 30vh 0vh 30vh ;
         
     @media(max-width: 800px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
+    align-items: flex-start;
     text-align: center;
     margin: 0;
     button{

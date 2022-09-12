@@ -6,7 +6,7 @@ function CardPokedex(props) {
   return (
     <StyleCard>
       <img src={props.url} alt="Imagem do Pokemon"></img>
-      <p>{props.nomePokemon}</p>
+      <p>{props.namePokemom}</p>
       {props.buttonRemove}
       {props.buttonView}
       
@@ -15,3 +15,4 @@ function CardPokedex(props) {
 }
 
 export default CardPokedex;
+
