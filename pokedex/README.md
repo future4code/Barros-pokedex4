@@ -1,6 +1,5 @@
 # POKEDEX
-
-![Pokedex](./pokedex/src/img/Tela_Readme.png)
+![Pokedex](Tela_readme.png)
 
 ## Índice
 
@@ -43,9 +42,7 @@ https://pokeapi.co/
 📁
 ## Acesso ao projeto
 
-
 **https://good-north.surge.sh/**
-
 
 
 
@@ -65,5 +62,4 @@ https://pokeapi.co/
 ✔️
 ## Conclusão
 
-
-Projeto desenvolvido em grupo, com grande aprendizado para todos,  em integrações com API e compartilhamento de dados através do uso de Estados Globais.
+Projeto desenvolvido em grupo, com desenvolvimento para todos em integrações com API e compartilhamento de dados através do uso de Estados Globais.
