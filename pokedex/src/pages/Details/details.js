@@ -6,7 +6,7 @@ import CardMoves from "../../components/CardMovesDetails/CardMoves";
 import CardStats from "../../components/CardStatsDetails/CardStats";
 import Headers from "../../components/Headers/Headers";
 import { BASE_URL } from "../../Constants/Constants";
-import { GlobalStateContext } from "../../context/GlobalStateContext";
+import  GlobalStateContext  from "../../context/GlobalStateContext";
 import useRequestData from "../../hooks/useRequestData";
 import * as MyRouters from "../../Rotas/Coodinator";
 import { ContainerBody } from "./style";

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CardPokedex from "../../components/CardPokedex/CardPokedex";
 import Headers from "../../components/Headers/Headers";
-import { GlobalStateContext } from "../../context/GlobalStateContext";
+import  GlobalStateContext  from "../../context/GlobalStateContext"
 import { Background } from "./style";
 import * as MyRouters from "../../Rotas/Coodinator"
 

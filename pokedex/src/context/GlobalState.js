@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { GlobalStateContext } from "./GlobalStateContext";
+import  GlobalStateContext  from "./GlobalStateContext";
 
 function GlobalState(props) {
 

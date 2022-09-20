@@ -17,23 +17,18 @@ img{
     min-width: 10rem;
     max-width: 10rem;
     min-height: 18vh;
-
     border-left: 3px solid #b3404a;
   }
 
-
-}
 @media(max-width: 1280px) {
     img{
         max-height: 10rem;
     }
-} 
-`
 
   @media (max-width: 800px) {
     img {
       min-width: 70vw;
     }
   }
-`;
-r
+}`
+

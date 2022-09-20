@@ -10,7 +10,6 @@ function App() {
      <GlobalState>
        <Routers/>
      </GlobalState>
-
     </StyleContainer>
   );
 }
